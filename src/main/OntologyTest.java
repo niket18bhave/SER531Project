@@ -14,59 +14,10 @@ public class OntologyTest {
 	static String genreName = "Crime";
 	static String countryName = "USA";
 	static String titleName = "Il pensionante";
-	static String actorName = "Arthur Chesney";
-	static String searchByGenre = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
-			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
-			+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-			+ "PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>\n"
-			+ "PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>\n"
-			+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n"
-			+ "SELECT ?TID ?Title ?year ?Actor ?director ?genre ?language ?Country \n"
-			+ "WHERE {\n"
-				+ "SERVICE <http://35.193.133.153:3030/ds/query>"
-				+ "{"
-			    	+ "SELECT ?subject ?TID ?Title ?year ?Actor ?director ?genre ?language ?Country\n" 
-			    	+ "WHERE {\n"
-			    	    + "?subject mo:hasTitleId ?TID;\n"
-			    	    + "mo:hasTitle ?Title;\n"
-		    			+ "mo:hasActors ?Actor;\n"
-		    			+ "mo:hasDirector ?director;\n"
-		    			+ "mo:hasGenre ?genre;\n"
-		    			+ "mo:hasLanguages ?language;\n"
-		    			+ "mo:hasCountry ?Country;\n"
-		    			+ "mo:hasYear ?year.\n"
-		    			+ "FILTER(xsd:string(?genre)=\"" + genreName + "\"" + ").\n"
-		    			//+ "FILTER((?Title)=\"Il pensionante\")."
-		    		+"}"
-			    	+ "order by desc (?year)"
-			    +"}"
-			+"}";
-	
-	static String searchByCountry = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
-			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
-			+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-			+ "PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>\n"
-			+ "PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>\n"
-			+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n"
-			+ "SELECT ?TID ?Title ?year ?Actor ?director ?genre ?language ?Country \n"
-			+ "WHERE {\n"
-				+ "SERVICE <http://35.193.133.153:3030/ds/query>"
-				+ "{"
-			    	+ "SELECT ?subject ?TID ?Title ?year ?Actor ?director ?genre ?language ?Country\n" 
-			    	+ "WHERE {\n"
-			    	    + "?subject mo:hasTitleId ?TID;\n"
-			    	    + "mo:hasTitle ?Title;\n"
-		    			+ "mo:hasActors ?Actor;\n"
-		    			+ "mo:hasDirector ?director;\n"
-		    			+ "mo:hasGenre ?genre;\n"
-		    			+ "mo:hasLanguages ?language;\n"
-		    			+ "mo:hasCountry ?Country;\n"
-		    			+ "mo:hasYear ?year.\n"
-		    			+ "FILTER(xsd:string(?genre)=\"" + countryName + "\"" + ").\n"
-		    		+"}"
-			    	+ "order by desc (?year)"
-			    +"}"
-			+"}";
+	static String actorName = "Arthur";
+	static String directorName = "Alfred Hitchcock";
+	static String yearRange = "1920 - 1930";
+	static String searchBy = "";
 	
 	static String strQuery3 = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 			+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
@@ -90,9 +41,10 @@ public class OntologyTest {
 				
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		searchBy = SPARQLQuery.searchByTitle(titleName);
 		try {
 			Model model = ModelFactory.createDefaultModel();
-			Query query = QueryFactory.create(searchByGenre);
+			Query query = QueryFactory.create(searchBy);
 			QueryExecution queryExecution = QueryExecutionFactory.create(query, model);
 			
 			ResultSet results = queryExecution.execSelect();
