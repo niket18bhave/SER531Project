@@ -30,6 +30,11 @@ Queries.txt file contains list of all the queries that are used in the applicati
 latest version : https://youtu.be/FQRmoY334Is
 Old version : https://youtu.be/FQRmoY334Is
 
+##GCP Instances :
+Instance 1 - 35.223.121.153
+Instance 2 - 34.123.102.237
+Instance 3 - 34.123.102.237
+
 ### Authors
 * **Akhila Diddi**
 * **Kunal Sharma**
