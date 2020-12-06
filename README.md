@@ -21,7 +21,7 @@ Queries.txt file contains list of all the queries that are used in the applicati
 
 ### Installation Steps
 1. Clone the github Repository
-2. Use Eclipse ID to access the project
+2. Use Eclipse IDE to access the project
 3. Add classpath and Jars from the lib folder to project
 4. Run project as Java Application 
 
