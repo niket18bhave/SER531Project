@@ -13,12 +13,11 @@ You will need to install Java 8 and in order to run the software.
 ### Ontologies
 Movie, Actor and Rating ontology are added to the resources/OWL folder for reference.
 
+### Project Document
+Updated Project report is added to the resources/Projectdocument.
 
-### Authors
-* **Akhila Diddi**
-* **Kunal Sharma**
-* **Wuyi Wang**
-* **Niket Bhave**
+### Queries
+Queries.txt file contains list of all the queries that are used in the application.
 
 ### Installation Steps
 1. Clone the github Repository
@@ -31,4 +30,8 @@ Movie, Actor and Rating ontology are added to the resources/OWL folder for refer
 latest version : https://youtu.be/FQRmoY334Is
 Old version : https://youtu.be/FQRmoY334Is
 
-
+### Authors
+* **Akhila Diddi**
+* **Kunal Sharma**
+* **Wuyi Wang**
+* **Niket Bhave**
