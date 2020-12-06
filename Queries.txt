@@ -1,0 +1,219 @@
+
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on genre
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER(xsd:string(?genre)= "crime").
+					}
+				}
+				order by desc (?year);
+
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on Country
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER(xsd:string(?country)="USA").
+					}
+				}
+				order by desc (?year);
+
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on director
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER(xsd:string(?director)="Robert william").
+					}
+				}
+				order by desc (?year);
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on actor
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER(xsd:string(?actor)="Tom Cruise").
+					}
+				}
+				order by desc (?year);
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on year
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER ((?year) >= 1996&& (?year) <= 2000).
+					}
+				}
+				order by desc (?year);
+
+#federated query to get Movie data and ratings data from Movie database and ratings database based on  title
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>	
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>
+PREFIX ro: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/RatingOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?TID ?title ?year ?actor ?director ?genre ?language ?country ?averageRating ?numVotes
+WHERE	
+    SERVICE <http://35.193.133.153:3030/ds/query>		
+					
+					{
+					    SERVICE <http://34.123.102.237:3030/ds/query>
+			    			{
+			    				?sample ro:hasTitleId ?TID;
+			    					ro:numberOfVotes ?numVotes;
+			    					ro:averageRating ?averageRating;
+			    					ro:hasTitle ?title.
+		    				}
+				    	    ?subject mo:hasTitleId ?TID.
+			    			?subject mo:hasActors ?actor.
+			    			?subject mo:hasDirector ?director
+			    			?subject mo:hasGenre ?genre.
+			    			?subject mo:hasLanguages ?language.
+			    			?subject mo:hasCountry ?country.
+			    			?subject mo:hasYear ?year.
+				    		FILTER(xsd:string(?country)="USA").
+					}
+				}
+				order by desc (?year);
+
+
+# query to get Actor details  Actor Name
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>			
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>			
+PREFIX mo: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/MovieOntology#>			
+PREFIX ao: <http://www.semanticweb.org/niketbhave/ontologies/2020/10/ActorOntology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?actorName ?dob ?pob ?bio 
+			WHERE
+            SERVICE <http://35.223.121.153:3030/ds/query>
+            SERVICE <http://35.223.121.153:3030/ds/query>
+            {
+				SELECT ?actorName ?dob ?pob ?bio 
+					WHERE
+						?subject ao:hasName ?actorName.
+						?subject ao:hasDateOfBirth ?dob.
+						?subject ao:hasPlaceOfBirth ?pob.
+						?subject rdfs:comment ?bio.
+						FILTER CONTAINS((?actorName),"Trucy")
+					}
+				}
+			};
