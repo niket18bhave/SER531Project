@@ -28,7 +28,7 @@ Movie, Actor and Rating ontology are added to the resources/OWL folder for refer
 
 ## YouTube link : 
 
-lastest version : https://youtu.be/FQRmoY334Is
+latest version : https://youtu.be/FQRmoY334Is
 Old version : https://youtu.be/FQRmoY334Is
 
 
