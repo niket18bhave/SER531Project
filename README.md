@@ -19,3 +19,11 @@ Movie, Actor and Rating ontology are added to the resources/OWL folder for refer
 * **Kunal Sharma**
 * **Wuyi Wang**
 * **Niket Bhave**
+
+### Installation Steps
+1. Clone the github Repository
+2. Use Eclipse ID to access the project
+3. Add classpath and Jars from the lib folder to project
+4. Run project as Java Application 
+
+
