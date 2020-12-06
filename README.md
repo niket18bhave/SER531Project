@@ -10,6 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 You will need to install Java 8 and in order to run the software.
 
+### Ontologies
+Movie, Actor and Rating ontology are added to the resources/OWL folder for reference.
+
 
 ### Authors
 * **Akhila Diddi**
